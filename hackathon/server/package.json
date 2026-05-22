@@ -1,0 +1,34 @@
+{
+  "name": "swasth-ai-backend",
+  "version": "1.0.0",
+  "description": "Swasth AI Medical Platform Backend - GCP/Firebase",
+  "main": "server-firebase.js",
+  "scripts": {
+    "start": "node server-firebase.js",
+    "dev": "nodemon server-firebase.js",
+    "seed": "node scripts/seed-firebase.js",
+    "deploy:appengine": "gcloud app deploy",
+    "deploy:cloudrun": "gcloud run deploy swasth-ai --source .",
+    "logs": "gcloud app logs tail -s default"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "firebase-admin": "^12.7.0",
+    "helmet": "^7.1.0",
+    "joi": "^17.9.2",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "optionalDependencies": {
+    "swagger-ui-express": "^4.6.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

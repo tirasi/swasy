@@ -1,0 +1,13 @@
+{
+  "name": "team-beta-submission",
+  "version": "1.0.0",
+  "description": "Swasth AI Healthcare Management System - Team Beta Submission",
+  "scripts": {
+    "build:gcp": "vite build --mode production",
+    "deploy:gcp": "npm run build:gcp && gcloud app deploy",
+    "start": "node server/server.js"
+  },
+  "engines": {
+    "node": "18"
+  }
+}

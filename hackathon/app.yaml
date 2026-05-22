@@ -1,0 +1,28 @@
+runtime: nodejs18
+
+service: team-beta-submission
+
+env_variables:
+  NODE_ENV: production
+  VITE_API_URL: https://team-beta-submission-dot-medtech-hackathon-482215.appspot.com/api
+  VITE_GCP_PROJECT_ID: medtech-hackathon-482215
+
+automatic_scaling:
+  min_instances: 1
+  max_instances: 10
+
+handlers:
+- url: /assets/(.*)
+  static_files: dist/assets/\1
+  upload: dist/assets/(.*)
+  secure: always
+
+- url: /(.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))
+  static_files: dist/\1
+  upload: dist/(.*\.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot))
+  secure: always
+
+- url: /.*
+  static_files: dist/index.html
+  upload: dist/index.html
+  secure: always

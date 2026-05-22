@@ -1,0 +1,1 @@
+@echo off\necho 🚀 Deploying Team Beta Submission to Firebase...\n\nREM Build the application\necho 📦 Building application...\ncall npm run build\n\nREM Deploy to Firebase Hosting\necho ☁️ Deploying to Firebase Hosting...\nfirebase deploy --project medtech-hackathon-482215\n\necho ✅ Deployment Complete!\necho 🌐 URL: https://medtech-hackathon-482215.web.app\n\npause
